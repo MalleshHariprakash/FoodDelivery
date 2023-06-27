@@ -1,5 +1,5 @@
 from flask import Flask,request,render_template,jsonify
-from src.pipeline.prdiction_pipeline import CustomData,PredictPipeline
+from src.pipeline.prediction_pipeline import CustomData,PredictPipeline
 
 
 application=Flask(__name__)
@@ -26,9 +26,9 @@ def predict_datapoint():
             multiple_deliveries = float(request.form.get('multiple_deliveries')),
             Weather_conditions = request.form.get('Weather_conditions'),
             Road_traffic_density= request.form.get('Road_traffic_density'),
-            Type_of_order = request.form.get('Type_of_order')
-            Type_of_vehicle = request.form.get('Type_of_vehicle')
-            Festival = request.form.get('Festival')
+            Type_of_order = request.form.get('Type_of_order'),
+            Type_of_vehicle = request.form.get('Type_of_vehicle'),
+            Festival = request.form.get('Festival'),
             City = request.form.get('City')
         )
         final_new_data=data.get_data_as_dataframe()
